@@ -21,7 +21,8 @@ def palindrome(num) :
 def findPalindrome():
     palindromes = []
     for x in range ( 999, 99, -1):
-        for y in range ( 999, 99, -1):
+        for y in range ( x, 99, -1):
+            # because x * y == y * x. This makes sure x is always greater than y
             if( palindrome( x * y )):
                 palindromes.append( x * y )
     print(max(palindromes))
