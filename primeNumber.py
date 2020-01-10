@@ -5,3 +5,5 @@ def isPrimeNumber(num):
         if(num % x == 0):
             return False
     return True
+def lengthOfInteger ( num ):
+    return len( str ( num ) )
