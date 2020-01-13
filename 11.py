@@ -9,7 +9,7 @@ def convertArrayStr2Int(arr):
 
 def readInput():
     # read a 2 dimensional array from 11_input and return a corresponding array.
-    f = open('input.txt', 'r')
+    f = open('11_input.txt', 'r')
     output = []
     for x in f:
         output.append(convertArrayStr2Int(x.split()))
@@ -41,30 +41,21 @@ def findGreatestProductVertically(arr, interval=4):
 def findGreatestProductDiagonally(arr, interval=4):
     length = len(arr)
     daddyProduct = 0
+    # Major diagonal
     for x in range(0, length - interval + 1):
-        for y in range(0, length):
-            # Major diagonal
-            try:
-                product = arr[x][y] * arr[x+1][y+1] * arr[x+2][y+2] * arr[x+3][y+3]
-                print(arr[x][y] , arr[x+1][y+1] , arr[x+2][y+2] , arr[x+3][y+3])
-                print(product)
-                if product > daddyProduct:
-                    daddyProduct = product
-            except:
-                print('out of bound')
+        for y in range(0, length - interval + 1):
+            product = arr[x][y] * arr[x+1][y+1] * arr[x+2][y+2] * arr[x+3][y+3]
+            if product > daddyProduct:
+                daddyProduct = product
             
-            # Minor diagonal 
-            try:
-                product = arr[x][y] * arr[x+1][y-1] * arr[x+2][y-2] * arr[x+3][y-3]
-                print( arr[x][y] , arr[x+1][y-1] , arr[x+2][y-2] , arr[x+3][y-3])
-                print(product)
-                if product > daddyProduct:
-                    daddyProduct = product
-            except:
-                print('out of bound')
+    # Minor diagonal 
+    for x in range(0, length - interval + 1):
+        for y in range(3, length):
+            product = arr[x][y] * arr[x+1][y-1] * arr[x+2][y-2] * arr[x+3][y-3]
+            if product > daddyProduct:
+                daddyProduct = product
     return daddyProduct
 input = readInput()
-print(input[0][-1])
-# print( findGreatestProductDiagonally(input))
-# print(findGreatestProductVertically(input))
-# print( findGreatestProductHorizontally(input))
+print( findGreatestProductDiagonally(input))
+print(findGreatestProductVertically(input))
+print( findGreatestProductHorizontally(input))
