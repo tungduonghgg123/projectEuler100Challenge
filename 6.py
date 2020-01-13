@@ -7,4 +7,5 @@ for x in range ( 1, 101 ):
 sum = ( 1 + 100 ) * 100 / 2
 sum2 = sum * sum
 
+Sum
 print(int( sum2 - sum1 ))
