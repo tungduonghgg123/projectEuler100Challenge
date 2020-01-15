@@ -1,10 +1,7 @@
 # What is the greatest product of four adjacent numbers in the same direction (up, down, left, right, or diagonally) in the 20×20 grid?
 
 
-def convertArrayStr2Int(arr):
-    return [int(i) for i in arr]
-    # second approach
-    # return list( map( int, arr ) )
+from number import convertArrayStr2Int
 
 
 def readInput():
@@ -47,15 +44,17 @@ def findGreatestProductDiagonally(arr, interval=4):
             product = arr[x][y] * arr[x+1][y+1] * arr[x+2][y+2] * arr[x+3][y+3]
             if product > daddyProduct:
                 daddyProduct = product
-            
-    # Minor diagonal 
+
+    # Minor diagonal
     for x in range(0, length - interval + 1):
         for y in range(3, length):
             product = arr[x][y] * arr[x+1][y-1] * arr[x+2][y-2] * arr[x+3][y-3]
             if product > daddyProduct:
                 daddyProduct = product
     return daddyProduct
+
+
 input = readInput()
-print( findGreatestProductDiagonally(input))
+print(findGreatestProductDiagonally(input))
 print(findGreatestProductVertically(input))
-print( findGreatestProductHorizontally(input))
+print(findGreatestProductHorizontally(input))

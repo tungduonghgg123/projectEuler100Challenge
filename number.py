@@ -10,3 +10,9 @@ def findDevisors(n):
                 divisors.append(x)
                 divisors.append(n//x)
     return divisors
+def convertArrayStr2Int(arr):
+    return [int(i) for i in arr]
+    # second approach
+    # return list( map( int, arr ) )
+
+
