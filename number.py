@@ -1,4 +1,6 @@
 from math import sqrt
+import inflect
+
 def findDevisors(n):
     # of a natural number, n > 0
     divisors = []
@@ -27,3 +29,6 @@ def sumOfDigits ( num ):
         sum = sum + int ( string[x] )
     return sum
 
+def number2word(num):
+    p = inflect.engine()
+    return p.number_to_words(num)
