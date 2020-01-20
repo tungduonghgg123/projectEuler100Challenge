@@ -32,3 +32,10 @@ def sumOfDigits ( num ):
 def number2word(num):
     p = inflect.engine()
     return p.number_to_words(num)
+def readInput(path):
+    # read a 2 dimensional array from 11_input and return a corresponding array.
+    f = open(path, 'r')
+    output = []
+    for x in f:
+        output.append(convertArrayStr2Int(x.split()))
+    return output
