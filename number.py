@@ -1,10 +1,10 @@
-from math import sqrt
+import math
 import inflect
 
 def findDevisors(n):
     # of a natural number, n > 0
     divisors = []
-    for x in range (1, int(sqrt(n)) + 1 ):
+    for x in range (1, int(math.sqrt(n)) + 1 ):
         if n % x == 0:
             if x == n / x:
                 divisors.append(x)
@@ -39,3 +39,7 @@ def readInput(path):
     for x in f:
         output.append(convertArrayStr2Int(x.split()))
     return output
+def sumOfDigitsOfAFactorial(number):
+    factorial = math.factorial(number)
+    return sumOfDigits(factorial)
+
