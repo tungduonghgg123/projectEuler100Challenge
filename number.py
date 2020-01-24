@@ -1,17 +1,19 @@
 import math
 import inflect
 
-def findDevisors(n):
+def findDivisors(n):
     # of a natural number, n > 0
-    divisors = []
+    smallDivisors = []
+    bigDivisors = []
     for x in range (1, int(math.sqrt(n)) + 1 ):
         if n % x == 0:
             if x == n / x:
-                divisors.append(x)
+                smallDivisors.append(x)
             else:
-                divisors.append(x)
-                divisors.append(n//x)
-    return divisors
+                smallDivisors.append(x)
+                bigDivisors.append(n//x)
+    bigDivisors.reverse()
+    return smallDivisors + bigDivisors
 def convertArrayStr2Int(arr):
     return [int(i) for i in arr]
     # second approach
