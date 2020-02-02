@@ -33,7 +33,7 @@ def isBehind(word1, word2):
     if length1 > length2:
         return True
     return False
-def sortWordsIntoAlphabeticalOrder(words):
+def doBubbleSort(words):
     size = len(words)
     count = 0
     while count < size:
@@ -42,7 +42,9 @@ def sortWordsIntoAlphabeticalOrder(words):
                 words[i], words[i+1] = words[i+1], words[i]
         count += 1
     return words
-
+def doDefaultSortByPython(words):
+    words.sort()
+    return words
 def convertWord2Score(word):
     score = 0
     for letter in word:
@@ -55,5 +57,5 @@ def calculateTotalNameScores(names):
         total += convertWord2Score(name) * index
     return total
 input = readInput()
-sortedInput = sortWordsIntoAlphabeticalOrder(input)
+sortedInput = doBubbleSort(input)
 print(calculateTotalNameScores(sortedInput))

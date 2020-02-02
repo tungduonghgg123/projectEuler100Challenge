@@ -14,6 +14,14 @@ def findDivisors(n):
                 bigDivisors.append(n//x)
     bigDivisors.reverse()
     return smallDivisors + bigDivisors
+def sumOfProperDivisors(number):
+    # numbers less than n which divide evenly into n
+    sum = 0
+    divisors = findDivisors(number)
+    for divisor in divisors:
+        sum += divisor
+    return sum - number
+
 def convertArrayStr2Int(arr):
     return [int(i) for i in arr]
     # second approach
