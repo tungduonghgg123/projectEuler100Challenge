@@ -43,9 +43,11 @@ def doBubbleSort(words):
         count += 1
     return words
 def doDefaultSortByPython(words):
+    # takes around 2 seconds
     words.sort()
     return words
 def convertWord2Score(word):
+    # takes approximately 40s
     score = 0
     for letter in word:
         score += convertAlphabetLetter2Number(letter)

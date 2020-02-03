@@ -14,8 +14,9 @@ from number import sumOfProperDivisors
 from primeNumber import isPrimeNumber
 
 def isAnAbundantNumber(n):
-    # if isPrimeNumber(n):
-    #     return False
+    if isPrimeNumber(n):
+        # does not help, adding more 30s
+        return False
     if sumOfProperDivisors(n) > n:
         return True
     return False
