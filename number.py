@@ -53,3 +53,7 @@ def sumOfDigitsOfAFactorial(number):
     factorial = math.factorial(number)
     return sumOfDigits(factorial)
 
+def getHowManyDigitsOfANumber(number):
+    return len(str(number))
+def generateFibonacciNumber(f1, f2):
+    return f1 + f2
