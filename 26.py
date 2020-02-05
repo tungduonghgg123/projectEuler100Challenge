@@ -29,6 +29,7 @@ def detectPeriod(decimal):
         possibleIndexOfAdjacentPeriod = getAllIndexOfACharacter(startOfPeriod, decimal)
         del possibleIndexOfAdjacentPeriod[0]
         if len(possibleIndexOfAdjacentPeriod) == 0:
+            # remove this non repeating digit
             decimal = decimal[1:]
             continue
         for index in possibleIndexOfAdjacentPeriod:
@@ -38,6 +39,7 @@ def detectPeriod(decimal):
             if adjacentPeriod == period:
                 if verifyPeriod(decimal, period):
                     return period
+        # remove this non repeating digit
         decimal = decimal[1:]
     return '0'
         
@@ -69,12 +71,6 @@ def getLongestRecurringPeriod():
             denominator = x
     print(denominator)
 getLongestRecurringPeriod()
-# print(getRecurringPeriod(1,499)) 
-# print(getDecimalPart(1, 499))
-
-
-
-
 
      
 
