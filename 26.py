@@ -70,7 +70,8 @@ def getLongestRecurringPeriod():
             longestPeriod = length
             denominator = x
     print(denominator)
-getLongestRecurringPeriod()
+# getLongestRecurringPeriod()
+print(getRecurringPeriod(1,29))
 
      
 
